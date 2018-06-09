@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -35,8 +36,8 @@ namespace HRMS
         }
         public void setadcbuttonfalse()//将增删改按钮变成不可用
         {
-            stuaddbutton.BackgroundImage = null;
-            stuaddbutton.Enabled = false;
+           // stuaddbutton.BackgroundImage = null;
+           // stuaddbutton.Enabled = false;
             deletestubutton.BackgroundImage = null;
             deletestubutton.Enabled = false;
             changestubutton.BackgroundImage = null;
@@ -44,10 +45,10 @@ namespace HRMS
         }
         public void setadcbuttontrue()//将增删改按钮变成可用
         {
-            stuaddbutton.BackgroundImage = Image.FromFile("add.png");
+            //stuaddbutton.BackgroundImage = Image.FromFile("add.png");
             deletestubutton.BackgroundImage = Image.FromFile("delete.png");
             changestubutton.BackgroundImage = Image.FromFile("change.png");
-            stuaddbutton.Enabled = true;
+            //stuaddbutton.Enabled = true;
             deletestubutton.Enabled = true;
             changestubutton.Enabled = true;
         }
@@ -120,6 +121,7 @@ namespace HRMS
             /* stuaddbutton.Enabled = false;
              deletestubutton.Enabled = false;
              changestubutton.Enabled = false;*/
+            stuaddbutton.BackgroundImage = Image.FromFile("add.png");
             searchButton.BackgroundImage = Image.FromFile("search.png");
         }
         public void Condition_Lookup(String StrValue)//查找用，更新源
@@ -274,7 +276,8 @@ namespace HRMS
 
         private void stuaddbutton_Click(object sender, EventArgs e)
         {
-
+            AddStudent add = new AddStudent();
+            add.ShowDialog();
         }
 
         private void stuaddbutton_MouseEnter(object sender, EventArgs e)
@@ -289,7 +292,34 @@ namespace HRMS
 
         private void deletestubutton_Click(object sender, EventArgs e)
         {
+            DialogResult dr = MessageBox.Show("确认删除吗？", "提示", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+            {
+                SqlConnection conn = DBAccess.GetConnection();
+                //显示状态信息
+                if (conn.State == ConnectionState.Open)//判断当前连接的状态
+                {
+                    try
+                    {
 
+                        SqlCommand sqlCommand = conn.CreateCommand();
+                        String SQLstr = "DELETE FROM dbo.tb_Student where 学号='" + dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString() + "';" + "DELETE FROM dbo.tb_Login where ID='" + dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString() + "';";
+                        sqlCommand.CommandText = SQLstr;
+                        SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                        conn.Close();
+                        conn.Dispose();
+
+                        MessageBox.Show("删除成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Condition_Lookup(PreSelect);
+                        ClearTextBoxes();
+                        dataGridView1.ClearSelection();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("删除失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
         }
 
         private void deletestubutton_MouseEnter(object sender, EventArgs e)

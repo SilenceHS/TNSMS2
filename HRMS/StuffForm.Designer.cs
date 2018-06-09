@@ -389,7 +389,6 @@
             // stuaddbutton
             // 
             this.stuaddbutton.BackColor = System.Drawing.Color.Transparent;
-            this.stuaddbutton.Enabled = false;
             this.stuaddbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.stuaddbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.stuaddbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
