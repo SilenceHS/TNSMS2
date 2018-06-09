@@ -32,6 +32,7 @@ namespace HRMS
             relogbutton.BackgroundImage = Image.FromFile("relog.png");
             mainbutton.BackgroundImage = Image.FromFile("main.png");
             gradebutton.BackgroundImage = Image.FromFile("grade.png");
+            coursebutton.BackgroundImage = Image.FromFile("course.png");
             toolStripStatusLabel1.Text = "当前用户:" + user.getname();
         }
        private void 资料查询ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,7 +108,6 @@ namespace HRMS
             if (user.getposition() == "Student")
                 studentinit();
             this.Show();
-
         }
 
         private void relogbutton_MouseEnter(object sender, EventArgs e)
@@ -122,7 +122,8 @@ namespace HRMS
 
         private void mainbutton_Click(object sender, EventArgs e)
         {
-
+            StuffForm SF = new StuffForm();
+            SF.ShowDialog();
         }
 
         private void mainbutton_MouseEnter(object sender, EventArgs e)
@@ -148,6 +149,21 @@ namespace HRMS
         private void gradebutton_MouseLeave(object sender, EventArgs e)
         {
             gradebutton.BackgroundImage = Image.FromFile("grade.png");
+        }
+
+        private void coursebutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void coursebutton_MouseEnter(object sender, EventArgs e)
+        {
+            coursebutton.BackgroundImage = Image.FromFile("course2.png");
+        }
+
+        private void coursebutton_MouseLeave(object sender, EventArgs e)
+        {
+            coursebutton.BackgroundImage = Image.FromFile("course.png");
         }
     }
 }

@@ -48,6 +48,7 @@
             this.relogbutton = new System.Windows.Forms.Button();
             this.mainbutton = new System.Windows.Forms.Button();
             this.gradebutton = new System.Windows.Forms.Button();
+            this.coursebutton = new System.Windows.Forms.Button();
             this.userStatusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -169,11 +170,12 @@
             this.quitbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quitbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quitbutton.Location = new System.Drawing.Point(652, 218);
+            this.quitbutton.Location = new System.Drawing.Point(714, 218);
             this.quitbutton.Margin = new System.Windows.Forms.Padding(0);
             this.quitbutton.Name = "quitbutton";
             this.quitbutton.Size = new System.Drawing.Size(110, 110);
             this.quitbutton.TabIndex = 6;
+            this.quitbutton.Text = "6";
             this.quitbutton.UseVisualStyleBackColor = false;
             this.quitbutton.Click += new System.EventHandler(this.quitbutton_Click);
             this.quitbutton.MouseEnter += new System.EventHandler(this.quitbutton_MouseEnter);
@@ -186,11 +188,12 @@
             this.changepswbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.changepswbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.changepswbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changepswbutton.Location = new System.Drawing.Point(358, 218);
+            this.changepswbutton.Location = new System.Drawing.Point(432, 218);
             this.changepswbutton.Margin = new System.Windows.Forms.Padding(0);
             this.changepswbutton.Name = "changepswbutton";
             this.changepswbutton.Size = new System.Drawing.Size(110, 110);
             this.changepswbutton.TabIndex = 7;
+            this.changepswbutton.Text = "4";
             this.changepswbutton.UseVisualStyleBackColor = false;
             this.changepswbutton.Click += new System.EventHandler(this.changepswbutton_Click);
             this.changepswbutton.MouseEnter += new System.EventHandler(this.changepswbutton_MouseEnter);
@@ -203,10 +206,11 @@
             this.relogbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.relogbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.relogbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.relogbutton.Location = new System.Drawing.Point(505, 218);
+            this.relogbutton.Location = new System.Drawing.Point(573, 218);
             this.relogbutton.Name = "relogbutton";
             this.relogbutton.Size = new System.Drawing.Size(110, 110);
             this.relogbutton.TabIndex = 8;
+            this.relogbutton.Text = "5";
             this.relogbutton.UseVisualStyleBackColor = false;
             this.relogbutton.Click += new System.EventHandler(this.relogbutton_Click);
             this.relogbutton.MouseEnter += new System.EventHandler(this.relogbutton_MouseEnter);
@@ -219,11 +223,12 @@
             this.mainbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.mainbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.mainbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainbutton.Location = new System.Drawing.Point(64, 218);
+            this.mainbutton.Location = new System.Drawing.Point(9, 218);
             this.mainbutton.Margin = new System.Windows.Forms.Padding(0);
             this.mainbutton.Name = "mainbutton";
             this.mainbutton.Size = new System.Drawing.Size(110, 110);
             this.mainbutton.TabIndex = 9;
+            this.mainbutton.Text = "1";
             this.mainbutton.UseVisualStyleBackColor = false;
             this.mainbutton.Click += new System.EventHandler(this.mainbutton_Click);
             this.mainbutton.MouseEnter += new System.EventHandler(this.mainbutton_MouseEnter);
@@ -236,15 +241,33 @@
             this.gradebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.gradebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.gradebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradebutton.Location = new System.Drawing.Point(211, 218);
+            this.gradebutton.Location = new System.Drawing.Point(150, 218);
             this.gradebutton.Margin = new System.Windows.Forms.Padding(0);
             this.gradebutton.Name = "gradebutton";
             this.gradebutton.Size = new System.Drawing.Size(110, 110);
             this.gradebutton.TabIndex = 10;
+            this.gradebutton.Text = "2";
             this.gradebutton.UseVisualStyleBackColor = false;
             this.gradebutton.Click += new System.EventHandler(this.gradebutton_Click);
             this.gradebutton.MouseEnter += new System.EventHandler(this.gradebutton_MouseEnter);
             this.gradebutton.MouseLeave += new System.EventHandler(this.gradebutton_MouseLeave);
+            // 
+            // coursebutton
+            // 
+            this.coursebutton.BackColor = System.Drawing.Color.Transparent;
+            this.coursebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.coursebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.coursebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.coursebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.coursebutton.Location = new System.Drawing.Point(291, 218);
+            this.coursebutton.Name = "coursebutton";
+            this.coursebutton.Size = new System.Drawing.Size(110, 110);
+            this.coursebutton.TabIndex = 11;
+            this.coursebutton.Text = "3";
+            this.coursebutton.UseVisualStyleBackColor = false;
+            this.coursebutton.Click += new System.EventHandler(this.coursebutton_Click);
+            this.coursebutton.MouseEnter += new System.EventHandler(this.coursebutton_MouseEnter);
+            this.coursebutton.MouseLeave += new System.EventHandler(this.coursebutton_MouseLeave);
             // 
             // MainWindow
             // 
@@ -252,6 +275,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(844, 519);
+            this.Controls.Add(this.coursebutton);
             this.Controls.Add(this.gradebutton);
             this.Controls.Add(this.mainbutton);
             this.Controls.Add(this.relogbutton);
@@ -290,6 +314,7 @@
         private System.Windows.Forms.Button relogbutton;
         private System.Windows.Forms.Button mainbutton;
         private System.Windows.Forms.Button gradebutton;
+        private System.Windows.Forms.Button coursebutton;
     }
 }
 
