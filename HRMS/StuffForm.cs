@@ -31,6 +31,25 @@ namespace HRMS
             photoPictureBox.Image = null;
             picSelectButton.Enabled = false;
             picDeleteButton.Enabled = false;
+            setadcbuttonfalse();
+        }
+        public void setadcbuttonfalse()//将增删改按钮变成不可用
+        {
+            stuaddbutton.BackgroundImage = null;
+            stuaddbutton.Enabled = false;
+            deletestubutton.BackgroundImage = null;
+            deletestubutton.Enabled = false;
+            changestubutton.BackgroundImage = null;
+            changestubutton.Enabled = false;
+        }
+        public void setadcbuttontrue()//将增删改按钮变成可用
+        {
+            stuaddbutton.BackgroundImage = Image.FromFile("add.png");
+            deletestubutton.BackgroundImage = Image.FromFile("delete.png");
+            changestubutton.BackgroundImage = Image.FromFile("change.png");
+            stuaddbutton.Enabled = true;
+            deletestubutton.Enabled = true;
+            changestubutton.Enabled = true;
         }
         public void Renewgridpic(DataGridView DGrid)//更新grid里的图片
         {
@@ -41,7 +60,7 @@ namespace HRMS
                 /*pic = (byte[])(datasetGrid.Tables[0].Rows[DGrid.CurrentCell.RowIndex][7]);
                 MemoryStream ms = new MemoryStream(pic);  //将字节数组存入到二进制流中
                 photoPictureBox.Image =   //二进制流Image控件中显示*/
-                pic = (byte[])DGrid[7, DGrid.CurrentCell.RowIndex].Value;
+                pic = (byte[])DGrid[8, DGrid.CurrentCell.RowIndex].Value;
                 MemoryStream ms = new MemoryStream(pic);  //将字节数组存入到二进制流中
                 photoPictureBox.Image = Image.FromStream(ms); 
             }
@@ -63,12 +82,13 @@ namespace HRMS
                     phoneTextBox.Text = DGrid[4, DGrid.CurrentCell.RowIndex].Value.ToString();
                     positionTextBox.Text = DGrid[3, DGrid.CurrentCell.RowIndex].Value.ToString();
                     addressTextBox.Text = DGrid[5, DGrid.CurrentCell.RowIndex].Value.ToString();
-                    emailTextBox.Text = DGrid[6, DGrid.CurrentCell.RowIndex].Value.ToString();
-                    //remarkTextBox.Text = DGrid[7, DGrid.CurrentCell.RowIndex].Value.ToString();
+                    emailTextBox.Text = DGrid[6, DGrid.CurrentCell.RowIndex].Value.ToString(); 
                     Renewgridpic(DGrid);
+                    remarkTextBox.Text = DGrid[7, DGrid.CurrentCell.RowIndex].Value.ToString();
                     //nID = Convert.ToInt32(idTextBox.Text); //获取当前职位编号
                     picSelectButton.Enabled = true;
                     picDeleteButton.Enabled = true;
+                    setadcbuttontrue();
                     return DGrid[1, DGrid.CurrentCell.RowIndex].Value.ToString();//返回当前职工的姓名
                 }
                 else
@@ -78,6 +98,7 @@ namespace HRMS
                     nID = 0;
                     picSelectButton.Enabled = false;
                     picDeleteButton.Enabled = false;
+                    setadcbuttonfalse();
                     return "";
                 }
             }
@@ -86,6 +107,7 @@ namespace HRMS
                 ClearTextBoxes();
                 picSelectButton.Enabled = false;
                 picDeleteButton.Enabled = false;
+                setadcbuttonfalse();
                 MessageBox.Show("找不到信息");
             }
             return "";
@@ -95,6 +117,10 @@ namespace HRMS
         public StuffForm()
         {
             InitializeComponent();
+            /* stuaddbutton.Enabled = false;
+             deletestubutton.Enabled = false;
+             changestubutton.Enabled = false;*/
+            searchButton.BackgroundImage = Image.FromFile("search.png");
         }
         public void Condition_Lookup(String StrValue)//查找用，更新源
         {
@@ -102,6 +128,7 @@ namespace HRMS
             if(StrValue=="ALL")//如果选择all，就直接获得所有
             {
                 datasetGrid = dbAccess.GetDataset("select * from dbo.tb_Student", "dbo.tb_Student");
+                //datasetGrid = dbAccess.GetDataset("select 学号,姓名,性别,职位,电话,地址,Email,备注,照片 from dbo.tb_Student", "dbo.tb_Student");
                 dataGridView1.DataSource = datasetGrid.Tables[0];
                 //currentTextBox.Text = Grid_Info(dataGridView1);
                 //valueTextBox.Text = "";
@@ -112,6 +139,7 @@ namespace HRMS
             else
             {
                 datasetGrid = dbAccess.GetDataset("select * from dbo.tb_Student where " + PreSelect + "='" + PreString + "'", "dbo.tb_Student");
+                //datasetGrid = dbAccess.GetDataset("select 学号,姓名,性别,职位,电话,地址,Email,备注,照片 from dbo.tb_Student where " + PreSelect + "='" + PreString + "'", "dbo.tb_Student");
                 dataGridView1.DataSource = datasetGrid.Tables[0];
               /*currentTextBox.Text = Grid_Info(dataGridView1);
                 valueTextBox.Text = "";
@@ -163,6 +191,7 @@ namespace HRMS
             PreGridSelect = dataGridView1.CurrentCell.RowIndex;
             picSelectButton.Enabled = true;
             picDeleteButton.Enabled = true;
+            setadcbuttontrue();
         }
         
         private void picSelectButton_Click(object sender, EventArgs e)
@@ -243,7 +272,68 @@ namespace HRMS
             }
         }
 
-           
+        private void stuaddbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stuaddbutton_MouseEnter(object sender, EventArgs e)
+        {
+            stuaddbutton.BackgroundImage = Image.FromFile("add2.png");
+        }
+
+        private void stuaddbutton_MouseLeave(object sender, EventArgs e)
+        {
+            stuaddbutton.BackgroundImage = Image.FromFile("add.png");
+        }
+
+        private void deletestubutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deletestubutton_MouseEnter(object sender, EventArgs e)
+        {
+            deletestubutton.BackgroundImage = Image.FromFile("delete2.png");
+        }
+
+        private void deletestubutton_MouseLeave(object sender, EventArgs e)
+        {
+            deletestubutton.BackgroundImage = Image.FromFile("delete.png");
+        }
+
+        private void changestubutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void changestubutton_MouseEnter(object sender, EventArgs e)
+        {
+            changestubutton.BackgroundImage = Image.FromFile("change2.png");
+        }
+
+        private void changestubutton_MouseLeave(object sender, EventArgs e)
+        {
+            changestubutton.BackgroundImage = Image.FromFile("change.png");
+        }
+
+        private void searchButton_MouseEnter(object sender, EventArgs e)
+        {
+            searchButton.BackgroundImage = Image.FromFile("search2.png");
+        }
+
+        private void searchButton_MouseLeave(object sender, EventArgs e)
+        {
+            searchButton.BackgroundImage = Image.FromFile("search.png");
+        }
+
+
+
+
+
+
+
+
 
         /* private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
          {
