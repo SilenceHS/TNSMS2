@@ -107,6 +107,7 @@ namespace HRMS
             if (user.getposition() == "Student")
                 studentinit();
             this.Show();
+
         }
 
         private void relogbutton_MouseEnter(object sender, EventArgs e)
