@@ -106,6 +106,7 @@ namespace HRMS
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Changepsw";
             this.ResumeLayout(false);
             this.PerformLayout();

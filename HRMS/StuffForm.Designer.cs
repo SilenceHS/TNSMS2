@@ -475,6 +475,7 @@
             this.Controls.Add(this.photoPictureBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picSelectButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "StuffForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StuffForm";

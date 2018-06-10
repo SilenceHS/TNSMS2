@@ -283,6 +283,7 @@
             this.Controls.Add(this.quitbutton);
             this.Controls.Add(this.userStatusStrip);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
