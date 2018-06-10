@@ -42,15 +42,19 @@ namespace HRMS
             deletestubutton.Enabled = false;
             changestubutton.BackgroundImage = null;
             changestubutton.Enabled = false;
+            repswbutton.BackgroundImage = null;
+            repswbutton.Enabled = false;
         }
         public void setadcbuttontrue()//将增删改按钮变成可用
         {
             //stuaddbutton.BackgroundImage = Image.FromFile("add.png");
             deletestubutton.BackgroundImage = Image.FromFile("delete.png");
             changestubutton.BackgroundImage = Image.FromFile("change.png");
+            repswbutton.BackgroundImage = Image.FromFile("repsw.png");
             //stuaddbutton.Enabled = true;
             deletestubutton.Enabled = true;
             changestubutton.Enabled = true;
+            repswbutton.Enabled = true;
         }
         public void Renewgridpic(DataGridView DGrid)//更新grid里的图片
         {
@@ -308,7 +312,6 @@ namespace HRMS
                         SqlDataReader dataReader = sqlCommand.ExecuteReader();
                         conn.Close();
                         conn.Dispose();
-
                         MessageBox.Show("删除成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Condition_Lookup(PreSelect);
                         ClearTextBoxes();
@@ -355,6 +358,44 @@ namespace HRMS
         private void searchButton_MouseLeave(object sender, EventArgs e)
         {
             searchButton.BackgroundImage = Image.FromFile("search.png");
+        }
+
+        private void repswbutton_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("确认重置密码为123456吗？", "提示", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+            {
+                try
+                {
+                    SqlConnection conn = DBAccess.GetConnection();
+                    if (conn.State == ConnectionState.Open)//判断当前连接的状态
+                    {
+                        //显示状态信息
+                        SqlCommand sqlCommand = conn.CreateCommand();
+                        String SQLstr = " UPDATE dbo.tb_Login SET Password = '123456' WHERE ID = '" + dataGridView1[0, dataGridView1.CurrentCell.RowIndex].Value.ToString() + "';";
+                        sqlCommand.CommandText = SQLstr;
+                        SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                        conn.Close();
+                        conn.Dispose();
+                        MessageBox.Show("重置成功！新密码为123456", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("连接数据库失败");//出现异常弹出提示
+                    Application.Exit();
+                }
+            }
+        }
+
+        private void repswbutton_MouseEnter(object sender, EventArgs e)
+        {
+            repswbutton.BackgroundImage = Image.FromFile("repsw2.png");
+        }
+
+        private void repswbutton_MouseLeave(object sender, EventArgs e)
+        {
+            repswbutton.BackgroundImage = Image.FromFile("repsw.png");
         }
 
 

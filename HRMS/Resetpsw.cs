@@ -33,6 +33,8 @@ namespace HRMS
                     String SQLstr = " UPDATE dbo.tb_Login SET Password = '123456' WHERE ID = '" + reidtextBox.Text + "';";
                     sqlCommand.CommandText = SQLstr;
                     SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                    conn.Close();
+                    conn.Dispose();
                 }
             }
             catch
