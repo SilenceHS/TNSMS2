@@ -83,7 +83,8 @@ namespace HRMS
 
         private void changepswbutton_Click(object sender, EventArgs e)
         {
-
+            Changepsw change = new Changepsw(user);
+            change.ShowDialog();
         }
 
         private void changepswbutton_MouseEnter(object sender, EventArgs e)
