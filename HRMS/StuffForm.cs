@@ -61,10 +61,6 @@ namespace HRMS
             byte[] pic;
             try
             {
-                //将数据库中的图片存入到字节数组中
-                /*pic = (byte[])(datasetGrid.Tables[0].Rows[DGrid.CurrentCell.RowIndex][7]);
-                MemoryStream ms = new MemoryStream(pic);  //将字节数组存入到二进制流中
-                photoPictureBox.Image =   //二进制流Image控件中显示*/
                 pic = (byte[])DGrid[8, DGrid.CurrentCell.RowIndex].Value;
                 MemoryStream ms = new MemoryStream(pic);  //将字节数组存入到二进制流中
                 photoPictureBox.Image = Image.FromStream(ms); 
@@ -339,6 +335,9 @@ namespace HRMS
         {
             Updatestu update = new Updatestu(dataGridView1);
             update.ShowDialog();
+            Condition_Lookup(PreSelect);
+            ClearTextBoxes();
+            dataGridView1.ClearSelection();
         }
 
         private void changestubutton_MouseEnter(object sender, EventArgs e)

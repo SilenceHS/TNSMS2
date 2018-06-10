@@ -331,7 +331,7 @@ namespace HRMS
             this.Close();
         }
 
-        private void ybutton_Click(object sender, EventArgs e)
+        public virtual void ybutton_Click(object sender, EventArgs e)
         {
             if(IDtextBox.Text!=string.Empty&& NametextBox.Text!=string.Empty&& EmailtextBox.Text!=string.Empty)
             {
