@@ -26,11 +26,8 @@ namespace HRMS
         {
             try
             {
-                /*string ConStr = "server=DESKTOP-V752EIN;database=" + "HRMS" + ";uid=16211160112;pwd=16211160112";
-                //创建SqlConnection对象
-                conn = new SqlConnection(ConStr);
-                conn.Open();//打开连接*/
-                SqlConnection conn = DBAccess.GetConnection();
+                DBAccess dba = new DBAccess();
+                SqlConnection conn = dba.Getconnection();
                 if (conn.State == ConnectionState.Open)//判断当前连接的状态
                 {
                     //显示状态信息

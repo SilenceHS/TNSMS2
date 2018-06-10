@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -16,23 +18,58 @@ namespace HRMS
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private Button button1;
-        private Button button2;
+        public TextBox IDtextBox;
+        public TextBox NametextBox;
+        public TextBox PositiontextBox;
+        public TextBox PhonetextBox;
+        public TextBox AddresstextBox;
+        public TextBox EmailtextBox;
+        public TextBox textBox;
+        public Button ybutton;
+        public ComboBox SexcomboBox;
+        private Label label9;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private Button nbutton;
 
         public AddStudent()
         {
             InitializeComponent();
+            SexcomboBox.SelectedIndex= SexcomboBox.Items.IndexOf("男");
         }
+        private bool exist()
+        {
+            try
+            {
+                SqlConnection conn = DBAccess.GetConnection();
+                if (conn.State == ConnectionState.Open)//判断当前连接的状态
+                {
+                    //显示状态信息
+                    SqlCommand sqlCommand = conn.CreateCommand();
+                    String SQLstr = "select ID from dbo.tb_Login where ID='" + IDtextBox.Text + "' or Name='" + NametextBox.Text + "';";
+                    sqlCommand.CommandText = SQLstr;
+                    SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                    bool bReader = dataReader.Read();
+                    conn.Close();
+                    conn.Dispose();
+                    if (bReader)
+                        return false;
+                    else
+                        return true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("连接数据库失败");//出现异常弹出提示
+                Application.Exit();
+            }
+            return false;
+        }
+    
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddStudent));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -41,16 +78,20 @@ namespace HRMS
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.IDtextBox = new System.Windows.Forms.TextBox();
+            this.NametextBox = new System.Windows.Forms.TextBox();
+            this.PositiontextBox = new System.Windows.Forms.TextBox();
+            this.PhonetextBox = new System.Windows.Forms.TextBox();
+            this.AddresstextBox = new System.Windows.Forms.TextBox();
+            this.EmailtextBox = new System.Windows.Forms.TextBox();
+            this.textBox = new System.Windows.Forms.TextBox();
+            this.ybutton = new System.Windows.Forms.Button();
+            this.nbutton = new System.Windows.Forms.Button();
+            this.SexcomboBox = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -125,93 +166,151 @@ namespace HRMS
             this.label8.TabIndex = 7;
             this.label8.Text = "备注";
             // 
-            // textBox1
+            // IDtextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(75, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 8;
+            this.IDtextBox.Location = new System.Drawing.Point(75, 16);
+            this.IDtextBox.Name = "IDtextBox";
+            this.IDtextBox.Size = new System.Drawing.Size(100, 21);
+            this.IDtextBox.TabIndex = 8;
             // 
-            // textBox2
+            // NametextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(269, 16);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 9;
+            this.NametextBox.Location = new System.Drawing.Point(269, 16);
+            this.NametextBox.Name = "NametextBox";
+            this.NametextBox.Size = new System.Drawing.Size(100, 21);
+            this.NametextBox.TabIndex = 9;
             // 
-            // textBox3
+            // PositiontextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(75, 63);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 10;
+            this.PositiontextBox.Location = new System.Drawing.Point(269, 62);
+            this.PositiontextBox.Name = "PositiontextBox";
+            this.PositiontextBox.Size = new System.Drawing.Size(100, 21);
+            this.PositiontextBox.TabIndex = 11;
             // 
-            // textBox4
+            // PhonetextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(269, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 11;
+            this.PhonetextBox.Location = new System.Drawing.Point(75, 109);
+            this.PhonetextBox.Name = "PhonetextBox";
+            this.PhonetextBox.Size = new System.Drawing.Size(100, 21);
+            this.PhonetextBox.TabIndex = 12;
             // 
-            // textBox5
+            // AddresstextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(75, 109);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 12;
+            this.AddresstextBox.Location = new System.Drawing.Point(269, 109);
+            this.AddresstextBox.Name = "AddresstextBox";
+            this.AddresstextBox.Size = new System.Drawing.Size(100, 21);
+            this.AddresstextBox.TabIndex = 13;
             // 
-            // textBox6
+            // EmailtextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(269, 109);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 21);
-            this.textBox6.TabIndex = 13;
+            this.EmailtextBox.Location = new System.Drawing.Point(75, 163);
+            this.EmailtextBox.Name = "EmailtextBox";
+            this.EmailtextBox.Size = new System.Drawing.Size(100, 21);
+            this.EmailtextBox.TabIndex = 14;
             // 
-            // textBox7
+            // textBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(75, 163);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 21);
-            this.textBox7.TabIndex = 14;
+            this.textBox.Location = new System.Drawing.Point(269, 163);
+            this.textBox.Name = "textBox";
+            this.textBox.Size = new System.Drawing.Size(100, 21);
+            this.textBox.TabIndex = 15;
             // 
-            // textBox8
+            // ybutton
             // 
-            this.textBox8.Location = new System.Drawing.Point(269, 163);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 21);
-            this.textBox8.TabIndex = 15;
+            this.ybutton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ybutton.Image = ((System.Drawing.Image)(resources.GetObject("ybutton.Image")));
+            this.ybutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ybutton.Location = new System.Drawing.Point(85, 245);
+            this.ybutton.Name = "ybutton";
+            this.ybutton.Size = new System.Drawing.Size(66, 33);
+            this.ybutton.TabIndex = 16;
+            this.ybutton.Text = "确定";
+            this.ybutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ybutton.UseVisualStyleBackColor = true;
+            this.ybutton.Click += new System.EventHandler(this.ybutton_Click);
             // 
-            // button1
+            // nbutton
             // 
-            this.button1.Location = new System.Drawing.Point(56, 235);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 52);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.nbutton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.nbutton.Image = ((System.Drawing.Image)(resources.GetObject("nbutton.Image")));
+            this.nbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nbutton.Location = new System.Drawing.Point(269, 245);
+            this.nbutton.Name = "nbutton";
+            this.nbutton.Size = new System.Drawing.Size(66, 33);
+            this.nbutton.TabIndex = 17;
+            this.nbutton.Text = "取消";
+            this.nbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nbutton.UseVisualStyleBackColor = true;
+            this.nbutton.Click += new System.EventHandler(this.nbutton_Click);
             // 
-            // button2
+            // SexcomboBox
             // 
-            this.button2.Location = new System.Drawing.Point(269, 236);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(91, 51);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.SexcomboBox.FormattingEnabled = true;
+            this.SexcomboBox.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this.SexcomboBox.Location = new System.Drawing.Point(75, 62);
+            this.SexcomboBox.Name = "SexcomboBox";
+            this.SexcomboBox.Size = new System.Drawing.Size(100, 20);
+            this.SexcomboBox.TabIndex = 18;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Red;
+            this.label9.Location = new System.Drawing.Point(26, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(11, 12);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "*";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.Color.Red;
+            this.label10.Location = new System.Drawing.Point(25, 167);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(11, 12);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "*";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.Red;
+            this.label11.Location = new System.Drawing.Point(221, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(11, 12);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "*";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.Red;
+            this.label12.Location = new System.Drawing.Point(36, 210);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(83, 12);
+            this.label12.TabIndex = 22;
+            this.label12.Text = "带*号是必填项";
             // 
             // AddStudent
             // 
             this.ClientSize = new System.Drawing.Size(411, 310);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.SexcomboBox);
+            this.Controls.Add(this.nbutton);
+            this.Controls.Add(this.ybutton);
+            this.Controls.Add(this.textBox);
+            this.Controls.Add(this.EmailtextBox);
+            this.Controls.Add(this.AddresstextBox);
+            this.Controls.Add(this.PhonetextBox);
+            this.Controls.Add(this.PositiontextBox);
+            this.Controls.Add(this.NametextBox);
+            this.Controls.Add(this.IDtextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -221,9 +320,59 @@ namespace HRMS
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void nbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ybutton_Click(object sender, EventArgs e)
+        {
+            if(IDtextBox.Text!=string.Empty&& NametextBox.Text!=string.Empty&& EmailtextBox.Text!=string.Empty)
+            {
+                if (exist())
+                {
+                    try
+                    {
+
+                        SqlConnection conn = DBAccess.GetConnection();
+                        if (conn.State == ConnectionState.Open)//判断当前连接的状态
+                        {
+                            //显示状态信息
+                            SqlCommand sqlCommand = conn.CreateCommand();
+                            String SQLstr = "INSERT INTO dbo.tb_Login values ('" + IDtextBox.Text + "','" +
+                                NametextBox.Text + "','123456','Student','" + EmailtextBox.Text +
+                                "');INSERT INTO dbo.tb_Student values('" + IDtextBox.Text + "','" +
+                                NametextBox.Text + "','" + SexcomboBox.Text + "','" +
+                                PositiontextBox.Text + "','" + PhonetextBox.Text + "','" + AddresstextBox.Text +
+                                "','" + EmailtextBox.Text + "','" + textBox.Text + "',NULL);";
+                            sqlCommand.CommandText = SQLstr;
+                            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                            MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            conn.Close();
+                            conn.Dispose();
+                            this.Close();
+                        }
+                    }
+                    catch
+                    {
+                        MessageBox.Show("添加失败！");//出现异常弹出提示
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("已存在,请不要重复添加！");
+                }
+            }
+         else
+            {
+                MessageBox.Show("请填写带*选项");
+            }
         }
     }
 }

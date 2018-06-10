@@ -27,6 +27,10 @@ namespace HRMS
         
         #endregion
 
+        public DBAccess()
+        {
+            LoadConfiguration();//加载配置文件
+        }
         #region  读取配置文件
         public static bool LoadConfiguration()
         {
@@ -53,6 +57,13 @@ namespace HRMS
         #endregion
 
         #region  建立数据库连接
+        public  SqlConnection Getconnection()
+        {
+            LoadConfiguration();
+             sqlConnection = new SqlConnection(strSQLConnection);    //用SqlConnection对象与指定的数据库相连接
+            sqlConnection.Open();                                   //打开数据库连接
+            return sqlConnection;                                   //返回SqlConnection对象的信息
+        }
         public static SqlConnection GetConnection()
         {
             LoadConfiguration();

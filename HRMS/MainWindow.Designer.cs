@@ -284,6 +284,7 @@
             this.Controls.Add(this.userStatusStrip);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.userStatusStrip.ResumeLayout(false);
             this.userStatusStrip.PerformLayout();

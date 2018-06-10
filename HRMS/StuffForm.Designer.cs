@@ -476,6 +476,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.picSelectButton);
             this.Name = "StuffForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StuffForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

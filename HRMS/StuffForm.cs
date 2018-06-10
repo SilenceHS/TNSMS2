@@ -337,7 +337,8 @@ namespace HRMS
 
         private void changestubutton_Click(object sender, EventArgs e)
         {
-
+            Updatestu update = new Updatestu(dataGridView1);
+            update.ShowDialog();
         }
 
         private void changestubutton_MouseEnter(object sender, EventArgs e)
