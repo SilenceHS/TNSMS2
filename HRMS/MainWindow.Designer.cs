@@ -175,7 +175,6 @@
             this.quitbutton.Name = "quitbutton";
             this.quitbutton.Size = new System.Drawing.Size(110, 110);
             this.quitbutton.TabIndex = 6;
-            this.quitbutton.Text = "6";
             this.quitbutton.UseVisualStyleBackColor = false;
             this.quitbutton.Click += new System.EventHandler(this.quitbutton_Click);
             this.quitbutton.MouseEnter += new System.EventHandler(this.quitbutton_MouseEnter);
@@ -193,7 +192,6 @@
             this.changepswbutton.Name = "changepswbutton";
             this.changepswbutton.Size = new System.Drawing.Size(110, 110);
             this.changepswbutton.TabIndex = 7;
-            this.changepswbutton.Text = "4";
             this.changepswbutton.UseVisualStyleBackColor = false;
             this.changepswbutton.Click += new System.EventHandler(this.changepswbutton_Click);
             this.changepswbutton.MouseEnter += new System.EventHandler(this.changepswbutton_MouseEnter);
@@ -210,7 +208,6 @@
             this.relogbutton.Name = "relogbutton";
             this.relogbutton.Size = new System.Drawing.Size(110, 110);
             this.relogbutton.TabIndex = 8;
-            this.relogbutton.Text = "5";
             this.relogbutton.UseVisualStyleBackColor = false;
             this.relogbutton.Click += new System.EventHandler(this.relogbutton_Click);
             this.relogbutton.MouseEnter += new System.EventHandler(this.relogbutton_MouseEnter);
@@ -228,7 +225,6 @@
             this.mainbutton.Name = "mainbutton";
             this.mainbutton.Size = new System.Drawing.Size(110, 110);
             this.mainbutton.TabIndex = 9;
-            this.mainbutton.Text = "1";
             this.mainbutton.UseVisualStyleBackColor = false;
             this.mainbutton.Click += new System.EventHandler(this.mainbutton_Click);
             this.mainbutton.MouseEnter += new System.EventHandler(this.mainbutton_MouseEnter);
@@ -246,7 +242,6 @@
             this.gradebutton.Name = "gradebutton";
             this.gradebutton.Size = new System.Drawing.Size(110, 110);
             this.gradebutton.TabIndex = 10;
-            this.gradebutton.Text = "2";
             this.gradebutton.UseVisualStyleBackColor = false;
             this.gradebutton.Click += new System.EventHandler(this.gradebutton_Click);
             this.gradebutton.MouseEnter += new System.EventHandler(this.gradebutton_MouseEnter);
@@ -263,7 +258,6 @@
             this.coursebutton.Name = "coursebutton";
             this.coursebutton.Size = new System.Drawing.Size(110, 110);
             this.coursebutton.TabIndex = 11;
-            this.coursebutton.Text = "3";
             this.coursebutton.UseVisualStyleBackColor = false;
             this.coursebutton.Click += new System.EventHandler(this.coursebutton_Click);
             this.coursebutton.MouseEnter += new System.EventHandler(this.coursebutton_MouseEnter);

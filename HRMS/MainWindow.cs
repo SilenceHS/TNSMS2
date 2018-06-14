@@ -139,7 +139,8 @@ namespace HRMS
 
         private void gradebutton_Click(object sender, EventArgs e)
         {
-
+            GradeForm gradeForm = new GradeForm();
+            gradeForm.ShowDialog();
         }
 
         private void gradebutton_MouseEnter(object sender, EventArgs e)

@@ -37,7 +37,6 @@
             this.picDeleteButton = new System.Windows.Forms.Button();
             this.currentTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.picSelectButton = new System.Windows.Forms.Button();
@@ -63,11 +62,12 @@
             this.deletestubutton = new System.Windows.Forms.Button();
             this.changestubutton = new System.Windows.Forms.Button();
             this.repswbutton = new System.Windows.Forms.Button();
+            this.photoPictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -127,7 +127,7 @@
             "性别",
             "职位",
             "电话",
-            "地址",
+            "班级",
             "Email"});
             this.fieldComboBox.Location = new System.Drawing.Point(115, 26);
             this.fieldComboBox.Name = "fieldComboBox";
@@ -171,16 +171,6 @@
             this.label11.Size = new System.Drawing.Size(65, 12);
             this.label11.TabIndex = 20;
             this.label11.Text = "当前学生：";
-            // 
-            // photoPictureBox
-            // 
-            this.photoPictureBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.photoPictureBox.Location = new System.Drawing.Point(893, 75);
-            this.photoPictureBox.Name = "photoPictureBox";
-            this.photoPictureBox.Size = new System.Drawing.Size(179, 179);
-            this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.photoPictureBox.TabIndex = 17;
-            this.photoPictureBox.TabStop = false;
             // 
             // dataGridView1
             // 
@@ -458,6 +448,16 @@
             this.repswbutton.MouseEnter += new System.EventHandler(this.repswbutton_MouseEnter);
             this.repswbutton.MouseLeave += new System.EventHandler(this.repswbutton_MouseLeave);
             // 
+            // photoPictureBox
+            // 
+            this.photoPictureBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.photoPictureBox.Location = new System.Drawing.Point(893, 75);
+            this.photoPictureBox.Name = "photoPictureBox";
+            this.photoPictureBox.Size = new System.Drawing.Size(179, 179);
+            this.photoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photoPictureBox.TabIndex = 17;
+            this.photoPictureBox.TabStop = false;
+            // 
             // StuffForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -481,11 +481,11 @@
             this.Text = "StuffForm";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -34,7 +34,7 @@ namespace HRMS
             picDeleteButton.Enabled = false;
             setadcbuttonfalse();
         }
-        public void setadcbuttonfalse()//将增删改按钮变成不可用
+        public void setadcbuttonfalse()//将删改按钮变成不可用
         {
            // stuaddbutton.BackgroundImage = null;
            // stuaddbutton.Enabled = false;
@@ -45,7 +45,7 @@ namespace HRMS
             repswbutton.BackgroundImage = null;
             repswbutton.Enabled = false;
         }
-        public void setadcbuttontrue()//将增删改按钮变成可用
+        public void setadcbuttontrue()//将删改按钮变成可用
         {
             //stuaddbutton.BackgroundImage = Image.FromFile("add.png");
             deletestubutton.BackgroundImage = Image.FromFile("delete.png");
