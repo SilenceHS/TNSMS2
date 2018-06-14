@@ -147,6 +147,7 @@ namespace HRMS
             try
             {
                 dbaccess.GetSQLCommand(sql);
+                /*！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！此处存在bug*/
                 MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
