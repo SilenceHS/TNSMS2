@@ -278,6 +278,14 @@ namespace HRMS
         {
             AddStudent add = new AddStudent();
             add.ShowDialog();
+            if(PreSelect==null)
+            {
+                return;
+            }
+            Condition_Lookup(PreSelect);
+            ClearTextBoxes();
+            dataGridView1.ClearSelection();
+
         }
 
         private void stuaddbutton_MouseEnter(object sender, EventArgs e)
@@ -333,8 +341,11 @@ namespace HRMS
 
         private void changestubutton_Click(object sender, EventArgs e)
         {
+
             Updatestu update = new Updatestu(dataGridView1);
+            update.Text = "修改数据";
             update.ShowDialog();
+
             Condition_Lookup(PreSelect);
             ClearTextBoxes();
             dataGridView1.ClearSelection();

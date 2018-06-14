@@ -100,5 +100,19 @@ namespace HRMS
                 MessageBox.Show("请填写带*选项");
             }
         }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Updatestu
+            // 
+            this.ClientSize = new System.Drawing.Size(411, 310);
+            this.Name = "Updatestu";
+            this.Text = "";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
     }
 }

@@ -85,13 +85,13 @@ namespace HRMS
             this.AddresstextBox = new System.Windows.Forms.TextBox();
             this.EmailtextBox = new System.Windows.Forms.TextBox();
             this.textBox = new System.Windows.Forms.TextBox();
-            this.ybutton = new System.Windows.Forms.Button();
-            this.nbutton = new System.Windows.Forms.Button();
             this.SexcomboBox = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.nbutton = new System.Windows.Forms.Button();
+            this.ybutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -215,34 +215,6 @@ namespace HRMS
             this.textBox.Size = new System.Drawing.Size(100, 21);
             this.textBox.TabIndex = 15;
             // 
-            // ybutton
-            // 
-            this.ybutton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.ybutton.Image = ((System.Drawing.Image)(resources.GetObject("ybutton.Image")));
-            this.ybutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.ybutton.Location = new System.Drawing.Point(85, 245);
-            this.ybutton.Name = "ybutton";
-            this.ybutton.Size = new System.Drawing.Size(66, 33);
-            this.ybutton.TabIndex = 16;
-            this.ybutton.Text = "确定";
-            this.ybutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.ybutton.UseVisualStyleBackColor = true;
-            this.ybutton.Click += new System.EventHandler(this.ybutton_Click);
-            // 
-            // nbutton
-            // 
-            this.nbutton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.nbutton.Image = ((System.Drawing.Image)(resources.GetObject("nbutton.Image")));
-            this.nbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.nbutton.Location = new System.Drawing.Point(269, 245);
-            this.nbutton.Name = "nbutton";
-            this.nbutton.Size = new System.Drawing.Size(66, 33);
-            this.nbutton.TabIndex = 17;
-            this.nbutton.Text = "取消";
-            this.nbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.nbutton.UseVisualStyleBackColor = true;
-            this.nbutton.Click += new System.EventHandler(this.nbutton_Click);
-            // 
             // SexcomboBox
             // 
             this.SexcomboBox.FormattingEnabled = true;
@@ -294,6 +266,34 @@ namespace HRMS
             this.label12.TabIndex = 22;
             this.label12.Text = "带*号是必填项";
             // 
+            // nbutton
+            // 
+            this.nbutton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.nbutton.Image = ((System.Drawing.Image)(resources.GetObject("nbutton.Image")));
+            this.nbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.nbutton.Location = new System.Drawing.Point(269, 245);
+            this.nbutton.Name = "nbutton";
+            this.nbutton.Size = new System.Drawing.Size(66, 33);
+            this.nbutton.TabIndex = 17;
+            this.nbutton.Text = "取消";
+            this.nbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.nbutton.UseVisualStyleBackColor = true;
+            this.nbutton.Click += new System.EventHandler(this.nbutton_Click);
+            // 
+            // ybutton
+            // 
+            this.ybutton.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.ybutton.Image = ((System.Drawing.Image)(resources.GetObject("ybutton.Image")));
+            this.ybutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ybutton.Location = new System.Drawing.Point(85, 245);
+            this.ybutton.Name = "ybutton";
+            this.ybutton.Size = new System.Drawing.Size(66, 33);
+            this.ybutton.TabIndex = 16;
+            this.ybutton.Text = "确定";
+            this.ybutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ybutton.UseVisualStyleBackColor = true;
+            this.ybutton.Click += new System.EventHandler(this.ybutton_Click);
+            // 
             // AddStudent
             // 
             this.ClientSize = new System.Drawing.Size(411, 310);
@@ -322,6 +322,7 @@ namespace HRMS
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "AddStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "添加用户";
             this.ResumeLayout(false);
             this.PerformLayout();
 

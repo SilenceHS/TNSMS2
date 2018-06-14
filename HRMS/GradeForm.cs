@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -28,6 +29,7 @@ namespace HRMS
         }
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GradeForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Gradesearchbutton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,19 +54,25 @@ namespace HRMS
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 59);
+            this.groupBox1.Size = new System.Drawing.Size(528, 69);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "分类查询";
             // 
             // Gradesearchbutton
             // 
-            this.Gradesearchbutton.Location = new System.Drawing.Point(405, 23);
+            this.Gradesearchbutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradesearchbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradesearchbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradesearchbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradesearchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradesearchbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradesearchbutton.Image")));
+            this.Gradesearchbutton.Location = new System.Drawing.Point(408, 9);
+            this.Gradesearchbutton.Margin = new System.Windows.Forms.Padding(0);
             this.Gradesearchbutton.Name = "Gradesearchbutton";
-            this.Gradesearchbutton.Size = new System.Drawing.Size(61, 19);
+            this.Gradesearchbutton.Size = new System.Drawing.Size(51, 51);
             this.Gradesearchbutton.TabIndex = 4;
-            this.Gradesearchbutton.Text = "button1";
-            this.Gradesearchbutton.UseVisualStyleBackColor = true;
+            this.Gradesearchbutton.UseVisualStyleBackColor = false;
             this.Gradesearchbutton.Click += new System.EventHandler(this.Gradesearchbutton_Click);
             // 
             // textBox1
@@ -112,45 +120,67 @@ namespace HRMS
             this.panel1.Controls.Add(this.GradedataGridView);
             this.panel1.Location = new System.Drawing.Point(25, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(486, 270);
+            this.panel1.Size = new System.Drawing.Size(525, 270);
             this.panel1.TabIndex = 1;
             // 
             // GradedataGridView
             // 
-            this.GradedataGridView.AllowUserToOrderColumns = true;
+            this.GradedataGridView.AllowUserToAddRows = false;
+            this.GradedataGridView.AllowUserToDeleteRows = false;
             this.GradedataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GradedataGridView.Location = new System.Drawing.Point(5, 6);
+            this.GradedataGridView.Location = new System.Drawing.Point(3, 3);
+            this.GradedataGridView.MultiSelect = false;
             this.GradedataGridView.Name = "GradedataGridView";
+            this.GradedataGridView.ReadOnly = true;
             this.GradedataGridView.RowTemplate.Height = 23;
-            this.GradedataGridView.Size = new System.Drawing.Size(481, 263);
+            this.GradedataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GradedataGridView.Size = new System.Drawing.Size(522, 266);
             this.GradedataGridView.TabIndex = 0;
+            this.GradedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GradedataGridView_CellContentClick);
             // 
             // Gradeaddbutton
             // 
-            this.Gradeaddbutton.Location = new System.Drawing.Point(534, 112);
+            this.Gradeaddbutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradeaddbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradeaddbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradeaddbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradeaddbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradeaddbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradeaddbutton.Image")));
+            this.Gradeaddbutton.Location = new System.Drawing.Point(564, 87);
+            this.Gradeaddbutton.Margin = new System.Windows.Forms.Padding(0);
             this.Gradeaddbutton.Name = "Gradeaddbutton";
-            this.Gradeaddbutton.Size = new System.Drawing.Size(56, 65);
+            this.Gradeaddbutton.Size = new System.Drawing.Size(70, 70);
             this.Gradeaddbutton.TabIndex = 2;
-            this.Gradeaddbutton.Text = "button2";
-            this.Gradeaddbutton.UseVisualStyleBackColor = true;
+            this.Gradeaddbutton.UseVisualStyleBackColor = false;
+            this.Gradeaddbutton.Click += new System.EventHandler(this.Gradeaddbutton_Click);
             // 
             // Gradedeletebutton
             // 
-            this.Gradedeletebutton.Location = new System.Drawing.Point(537, 220);
+            this.Gradedeletebutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradedeletebutton.Enabled = false;
+            this.Gradedeletebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradedeletebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradedeletebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradedeletebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradedeletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradedeletebutton.Image")));
+            this.Gradedeletebutton.Location = new System.Drawing.Point(564, 179);
+            this.Gradedeletebutton.Margin = new System.Windows.Forms.Padding(0);
             this.Gradedeletebutton.Name = "Gradedeletebutton";
-            this.Gradedeletebutton.Size = new System.Drawing.Size(52, 77);
+            this.Gradedeletebutton.Size = new System.Drawing.Size(70, 70);
             this.Gradedeletebutton.TabIndex = 3;
-            this.Gradedeletebutton.Text = "button3";
-            this.Gradedeletebutton.UseVisualStyleBackColor = true;
+            this.Gradedeletebutton.UseVisualStyleBackColor = false;
+            this.Gradedeletebutton.Click += new System.EventHandler(this.Gradedeletebutton_Click);
             // 
             // GradeForm
             // 
-            this.ClientSize = new System.Drawing.Size(607, 356);
+            this.ClientSize = new System.Drawing.Size(659, 367);
             this.Controls.Add(this.Gradedeletebutton);
             this.Controls.Add(this.Gradeaddbutton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBox1);
             this.Name = "GradeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "成绩管理";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -192,12 +222,13 @@ namespace HRMS
                 GradedataGridView.ClearSelection();
                 GradedataGridView.DataSource = null;
                 MessageBox.Show("未设置查找条件！！！！！");
+                Gradedeletebutton.Enabled = false;
                 return;
             }
             try
             {
                 Condition_Lookup(StrValue);
-                //Grid_Info(dataGridView1);
+                Gradedeletebutton.Enabled = true;
             }
             catch
             {
@@ -206,6 +237,7 @@ namespace HRMS
                 GradedataGridView.ClearSelection();
                 GradedataGridView.DataSource = null;
                 MessageBox.Show("输入不正确！");
+                Gradedeletebutton.Enabled = false;
                 return;
             }
         }
@@ -220,6 +252,55 @@ namespace HRMS
 
             else
                 textBox1.Enabled = true;
+        }
+
+        private void Gradeaddbutton_Click(object sender, EventArgs e)
+        {
+            AddGrade addgrade = new AddGrade();
+            addgrade.ShowDialog();
+            if(PreSelect==null)
+            {
+                return;
+            }
+            Condition_Lookup(PreSelect);
+            Gradedeletebutton.Enabled = false;
+            GradedataGridView.ClearSelection();
+
+        }
+
+        private void Gradedeletebutton_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("确认删除吗？", "提示", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+            {
+                SqlConnection conn = DBAccess.GetConnection();
+                //显示状态信息
+                if (conn.State == ConnectionState.Open)//判断当前连接的状态
+                {
+                    try
+                    {
+                        SqlCommand sqlCommand = conn.CreateCommand();
+                        String SQLstr = "DELETE FROM dbo.tb_Grade where 学号='" + GradedataGridView[0, GradedataGridView.CurrentCell.RowIndex].Value.ToString() + "' and 学科='" + GradedataGridView[2, GradedataGridView.CurrentCell.RowIndex].Value.ToString() + "';";
+                        sqlCommand.CommandText = SQLstr;
+                        SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                        conn.Close();
+                        conn.Dispose();
+                        MessageBox.Show("删除成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Gradedeletebutton.Enabled = false;
+                        Condition_Lookup(PreSelect);
+                        GradedataGridView.ClearSelection();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("删除失败！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+        }
+
+        private void GradedataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Gradedeletebutton.Enabled = true;
         }
     }
 }
