@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -93,7 +94,7 @@ namespace HRMS
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 22);
             this.button1.TabIndex = 6;
-            this.button1.Text = "button1";
+            this.button1.Text = "确认";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -103,7 +104,7 @@ namespace HRMS
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(71, 20);
             this.button2.TabIndex = 7;
-            this.button2.Text = "button2";
+            this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -143,17 +144,28 @@ namespace HRMS
                 return;
             }
             DBAccess dbaccess = new DBAccess();
-            string sql = "insert into dbo.tb_Grade(学号,姓名,学科,成绩,班级) select '" + idtextBox.Text + "',姓名,'" + CoursecomboBox.Text + "'," + GradetextBox.Text + ",班级 from dbo.tb_Student where 学号='"+ idtextBox.Text+ "';";
+            string sql = "select 姓名,班级 from dbo.tb_Student where 学号='"+ idtextBox.Text+ "';";
             try
             {
+                DataSet datasetGrid = new DataSet();
+                datasetGrid=dbaccess.GetDataset(sql, "dbo.tb_Student");
+                if (datasetGrid.Tables.Count == 1 && datasetGrid.Tables[0].Rows.Count == 0)
+                {
+                    MessageBox.Show("学号不存在！");
+                    return;
+                }
+                DataRow mDr = datasetGrid.Tables[0].Rows[0];
+                DataColumn mDc1 = datasetGrid.Tables[0].Columns[0];
+                DataColumn mDc2 = datasetGrid.Tables[0].Columns[1];
+                string Name = mDr[mDc1].ToString();
+                string Class = mDr[mDc2].ToString();
+                sql = "insert into dbo.tb_Grade values('" + idtextBox.Text + "','"+Name+"','"+ CoursecomboBox.Text+"',"+ GradetextBox.Text+",'"+Class+"');";
                 dbaccess.GetSQLCommand(sql);
-                /*！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！此处存在bug*/
                 MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
             }
             catch
             {
-                MessageBox.Show("添加失败！请检查是否重复添加", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("添加失败！请勿重复添加", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void button2_Click(object sender, EventArgs e)
