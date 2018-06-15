@@ -36,7 +36,7 @@ namespace HRMS
                         IDtextBox.Text + "';update dbo.tb_Login set Name='" + NametextBox.Text +
                         "' where ID='" + IDtextBox.Text + "';update dbo.tb_Student set 学号='" + IDtextBox.Text + "',姓名='" +
                                 NametextBox.Text + "',性别='" + SexcomboBox.Text + "',职位='" +
-                                PositiontextBox.Text + "',电话='" + PhonetextBox.Text + "',地址='" + AddresstextBox.Text +
+                                PositiontextBox.Text + "',电话='" + PhonetextBox.Text + "',班级='" + AddresstextBox.Text +
                                 "',Email='" + EmailtextBox.Text + "',备注='" + textBox.Text + "' where 学号='" + IDtextBox.Text + "';";
                     sqlCommand.CommandText = SQLstr;
                     SqlDataReader dataReader = sqlCommand.ExecuteReader();
