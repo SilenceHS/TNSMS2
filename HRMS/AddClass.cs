@@ -65,6 +65,7 @@ namespace HRMS
             this.button2.Text = "取消";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // AddClass
             // 
@@ -100,6 +101,11 @@ namespace HRMS
                 MessageBox.Show("插入失败，请检查是否重复插入！");
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
