@@ -22,6 +22,7 @@ namespace HRMS
         private Label label1;
         string PreSelect;//用于记录之前查找的条件
         string PreString;//用于记录之前查找的语句
+        private Button Gradechangebutton;
         DataSet datasetGrid = null;
         public GradeForm()
         {
@@ -40,6 +41,7 @@ namespace HRMS
             this.GradedataGridView = new System.Windows.Forms.DataGridView();
             this.Gradeaddbutton = new System.Windows.Forms.Button();
             this.Gradedeletebutton = new System.Windows.Forms.Button();
+            this.Gradechangebutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GradedataGridView)).BeginInit();
@@ -163,7 +165,7 @@ namespace HRMS
             this.Gradedeletebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.Gradedeletebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Gradedeletebutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradedeletebutton.Image")));
-            this.Gradedeletebutton.Location = new System.Drawing.Point(564, 179);
+            this.Gradedeletebutton.Location = new System.Drawing.Point(564, 177);
             this.Gradedeletebutton.Margin = new System.Windows.Forms.Padding(0);
             this.Gradedeletebutton.Name = "Gradedeletebutton";
             this.Gradedeletebutton.Size = new System.Drawing.Size(70, 70);
@@ -171,9 +173,27 @@ namespace HRMS
             this.Gradedeletebutton.UseVisualStyleBackColor = false;
             this.Gradedeletebutton.Click += new System.EventHandler(this.Gradedeletebutton_Click);
             // 
+            // Gradechangebutton
+            // 
+            this.Gradechangebutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradechangebutton.Enabled = false;
+            this.Gradechangebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradechangebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradechangebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradechangebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradechangebutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradechangebutton.Image")));
+            this.Gradechangebutton.Location = new System.Drawing.Point(564, 267);
+            this.Gradechangebutton.Margin = new System.Windows.Forms.Padding(0);
+            this.Gradechangebutton.Name = "Gradechangebutton";
+            this.Gradechangebutton.Size = new System.Drawing.Size(70, 70);
+            this.Gradechangebutton.TabIndex = 4;
+            this.Gradechangebutton.UseVisualStyleBackColor = false;
+            this.Gradechangebutton.Click += new System.EventHandler(this.Gradechangebutton_Click);
+            // 
             // GradeForm
             // 
             this.ClientSize = new System.Drawing.Size(659, 367);
+            this.Controls.Add(this.Gradechangebutton);
             this.Controls.Add(this.Gradedeletebutton);
             this.Controls.Add(this.Gradeaddbutton);
             this.Controls.Add(this.panel1);
@@ -223,12 +243,14 @@ namespace HRMS
                 GradedataGridView.DataSource = null;
                 MessageBox.Show("未设置查找条件！！！！！");
                 Gradedeletebutton.Enabled = false;
+                Gradechangebutton.Enabled = false;
                 return;
             }
             try
             {
                 Condition_Lookup(StrValue);
                 Gradedeletebutton.Enabled = true;
+                Gradechangebutton.Enabled = true;
             }
             catch
             {
@@ -238,6 +260,7 @@ namespace HRMS
                 GradedataGridView.DataSource = null;
                 MessageBox.Show("输入不正确！");
                 Gradedeletebutton.Enabled = false;
+                Gradechangebutton.Enabled = false;
                 return;
             }
         }
@@ -264,6 +287,7 @@ namespace HRMS
             }
             Condition_Lookup(PreSelect);
             Gradedeletebutton.Enabled = false;
+            Gradechangebutton.Enabled = false;
             GradedataGridView.ClearSelection();
 
         }
@@ -287,6 +311,7 @@ namespace HRMS
                         conn.Dispose();
                         MessageBox.Show("删除成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Gradedeletebutton.Enabled = false;
+                        Gradechangebutton.Enabled = false;
                         Condition_Lookup(PreSelect);
                         GradedataGridView.ClearSelection();
                     }
@@ -301,6 +326,18 @@ namespace HRMS
         private void GradedataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Gradedeletebutton.Enabled = true;
+            Gradechangebutton.Enabled = true;
+        }
+
+        private void Gradechangebutton_Click(object sender, EventArgs e)
+        {
+            ChangeGrade cg = new ChangeGrade(GradedataGridView);
+            cg.Text = "修改成绩";
+            cg.ShowDialog();
+            Condition_Lookup(PreSelect);
+            Gradedeletebutton.Enabled = false;
+            Gradechangebutton.Enabled = false;
+            GradedataGridView.ClearSelection();
         }
     }
 }

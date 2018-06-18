@@ -146,7 +146,7 @@ namespace HRMS
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(29, 12);
             this.label6.TabIndex = 5;
-            this.label6.Text = "地址";
+            this.label6.Text = "班级";
             // 
             // label7
             // 

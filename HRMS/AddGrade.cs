@@ -9,13 +9,13 @@ namespace HRMS
 {
     class AddGrade:Form
     {
-        private TextBox idtextBox;
+        public TextBox idtextBox;
         private Label label2;
-        private ComboBox CoursecomboBox;
+        public ComboBox CoursecomboBox;
         private Label label3;
-        private TextBox GradetextBox;
-        private Button button1;
-        private Button button2;
+        public TextBox GradetextBox;
+        public Button button1;
+        public Button button2;
         private Label label1;
 
         public AddGrade()
@@ -24,11 +24,12 @@ namespace HRMS
             string sql = "select * from dbo.[dbo.tb_Course]";
             DBAccess dbaccess = new DBAccess();
             CoursecomboBox.DataSource = dbaccess.GetDataset(sql, "dbo.[dbo.tb_Course]").Tables[0];
-            CoursecomboBox.DisplayMember = "学科";
+           CoursecomboBox.DisplayMember = "学科";
             CoursecomboBox.ValueMember = "学科";
         }
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddGrade));
             this.label1 = new System.Windows.Forms.Label();
             this.idtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@ namespace HRMS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 42);
+            this.label1.Location = new System.Drawing.Point(37, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -58,7 +59,7 @@ namespace HRMS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 105);
+            this.label2.Location = new System.Drawing.Point(37, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 2;
@@ -67,7 +68,7 @@ namespace HRMS
             // CoursecomboBox
             // 
             this.CoursecomboBox.FormattingEnabled = true;
-            this.CoursecomboBox.Location = new System.Drawing.Point(94, 102);
+            this.CoursecomboBox.Location = new System.Drawing.Point(94, 91);
             this.CoursecomboBox.Name = "CoursecomboBox";
             this.CoursecomboBox.Size = new System.Drawing.Size(121, 20);
             this.CoursecomboBox.TabIndex = 3;
@@ -75,7 +76,7 @@ namespace HRMS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 184);
+            this.label3.Location = new System.Drawing.Point(37, 154);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 4;
@@ -83,28 +84,34 @@ namespace HRMS
             // 
             // GradetextBox
             // 
-            this.GradetextBox.Location = new System.Drawing.Point(94, 183);
+            this.GradetextBox.Location = new System.Drawing.Point(94, 151);
             this.GradetextBox.Name = "GradetextBox";
             this.GradetextBox.Size = new System.Drawing.Size(121, 21);
             this.GradetextBox.TabIndex = 5;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 227);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(43, 199);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 22);
+            this.button1.Size = new System.Drawing.Size(62, 32);
             this.button1.TabIndex = 6;
             this.button1.Text = "确认";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(183, 228);
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(184, 199);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 20);
+            this.button2.Size = new System.Drawing.Size(62, 32);
             this.button2.TabIndex = 7;
             this.button2.Text = "取消";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -127,7 +134,7 @@ namespace HRMS
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public virtual void button1_Click(object sender, EventArgs e)
         {
             try
             {
@@ -162,6 +169,7 @@ namespace HRMS
                 sql = "insert into dbo.tb_Grade values('" + idtextBox.Text + "','"+Name+"','"+ CoursecomboBox.Text+"',"+ GradetextBox.Text+",'"+Class+"');";
                 dbaccess.GetSQLCommand(sql);
                 MessageBox.Show("添加成功！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch
             {

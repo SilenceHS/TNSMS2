@@ -181,6 +181,7 @@ namespace HRMS
             this.Controls.Add(this.oldpswtextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Changepsw";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "修改密码";
             this.ResumeLayout(false);
             this.PerformLayout();

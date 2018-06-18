@@ -105,6 +105,10 @@ namespace HRMS
         {
             this.SuspendLayout();
             // 
+            // ybutton
+            // 
+          //  this.ybutton.Click += new System.EventHandler(this.ybutton_Click_1);
+            // 
             // Updatestu
             // 
             this.ClientSize = new System.Drawing.Size(411, 310);
@@ -114,5 +118,6 @@ namespace HRMS
             this.PerformLayout();
 
         }
+
     }
 }

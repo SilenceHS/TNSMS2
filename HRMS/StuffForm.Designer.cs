@@ -119,6 +119,7 @@
             // 
             // fieldComboBox
             // 
+            this.fieldComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.fieldComboBox.FormattingEnabled = true;
             this.fieldComboBox.Items.AddRange(new object[] {
             "ALL",
@@ -276,7 +277,7 @@
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(143, 140);
+            this.label10.Location = new System.Drawing.Point(3, 181);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(49, 18);
             this.label10.TabIndex = 6;
@@ -318,7 +319,7 @@
             // 
             this.remarkTextBox.AutoSize = true;
             this.remarkTextBox.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.remarkTextBox.Location = new System.Drawing.Point(178, 140);
+            this.remarkTextBox.Location = new System.Drawing.Point(47, 181);
             this.remarkTextBox.Name = "remarkTextBox";
             this.remarkTextBox.Size = new System.Drawing.Size(0, 17);
             this.remarkTextBox.TabIndex = 20;
