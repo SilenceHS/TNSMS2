@@ -410,13 +410,6 @@ namespace HRMS
         }
 
 
-
-
-
-
-
-
-
         /* private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
          {
              Grid_Info(dataGridView1);//当点击了Grid里面的条目，使用该函数更新下方信息显示

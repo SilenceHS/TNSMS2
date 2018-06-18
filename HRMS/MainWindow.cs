@@ -155,6 +155,8 @@ namespace HRMS
 
         private void coursebutton_Click(object sender, EventArgs e)
         {
+            ClassForm cf = new ClassForm();
+            cf.ShowDialog();
 
         }
 

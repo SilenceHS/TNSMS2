@@ -18,12 +18,21 @@ namespace HRMS
         }
         public override void button1_Click(object sender, EventArgs e)
         {
-            float grade = float.Parse(GradetextBox.Text);
-            if (grade < 0 || grade > 100)
+            try
+            {
+                Exception ee=new Exception();
+                float grade = float.Parse(GradetextBox.Text);
+                if (grade < 0 || grade > 100)
+                {
+                    throw ee;
+                }
+            }
+            catch
             {
                 MessageBox.Show("请输入0-100的有效数字！");
                 return;
             }
+            
             try
             {
                 string sql = "update dbo.tb_Grade set 成绩 = " + GradetextBox.Text + " where 学号 = " + idtextBox.Text + " and 学科 = '" + CoursecomboBox.Text + "'";
