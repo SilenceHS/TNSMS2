@@ -49,6 +49,8 @@
             this.mainbutton = new System.Windows.Forms.Button();
             this.gradebutton = new System.Windows.Forms.Button();
             this.coursebutton = new System.Windows.Forms.Button();
+            this.stuInfomationbutton = new System.Windows.Forms.Button();
+            this.stuGradebutton = new System.Windows.Forms.Button();
             this.userStatusStrip.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -125,7 +127,7 @@
             this.toolStripStatusLabel1});
             this.userStatusStrip.Location = new System.Drawing.Point(0, 497);
             this.userStatusStrip.Name = "userStatusStrip";
-            this.userStatusStrip.Size = new System.Drawing.Size(844, 22);
+            this.userStatusStrip.Size = new System.Drawing.Size(563, 22);
             this.userStatusStrip.TabIndex = 4;
             this.userStatusStrip.Text = "statusStrip1";
             // 
@@ -144,7 +146,7 @@
             this.帮助ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(844, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(563, 25);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -170,7 +172,7 @@
             this.quitbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quitbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quitbutton.Location = new System.Drawing.Point(714, 218);
+            this.quitbutton.Location = new System.Drawing.Point(370, 356);
             this.quitbutton.Margin = new System.Windows.Forms.Padding(0);
             this.quitbutton.Name = "quitbutton";
             this.quitbutton.Size = new System.Drawing.Size(110, 110);
@@ -187,7 +189,7 @@
             this.changepswbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.changepswbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.changepswbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changepswbutton.Location = new System.Drawing.Point(432, 218);
+            this.changepswbutton.Location = new System.Drawing.Point(88, 356);
             this.changepswbutton.Margin = new System.Windows.Forms.Padding(0);
             this.changepswbutton.Name = "changepswbutton";
             this.changepswbutton.Size = new System.Drawing.Size(110, 110);
@@ -204,7 +206,7 @@
             this.relogbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.relogbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.relogbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.relogbutton.Location = new System.Drawing.Point(573, 218);
+            this.relogbutton.Location = new System.Drawing.Point(229, 356);
             this.relogbutton.Name = "relogbutton";
             this.relogbutton.Size = new System.Drawing.Size(110, 110);
             this.relogbutton.TabIndex = 8;
@@ -220,7 +222,7 @@
             this.mainbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.mainbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.mainbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainbutton.Location = new System.Drawing.Point(9, 218);
+            this.mainbutton.Location = new System.Drawing.Point(88, 205);
             this.mainbutton.Margin = new System.Windows.Forms.Padding(0);
             this.mainbutton.Name = "mainbutton";
             this.mainbutton.Size = new System.Drawing.Size(110, 110);
@@ -237,7 +239,7 @@
             this.gradebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.gradebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.gradebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradebutton.Location = new System.Drawing.Point(150, 218);
+            this.gradebutton.Location = new System.Drawing.Point(229, 205);
             this.gradebutton.Margin = new System.Windows.Forms.Padding(0);
             this.gradebutton.Name = "gradebutton";
             this.gradebutton.Size = new System.Drawing.Size(110, 110);
@@ -254,7 +256,7 @@
             this.coursebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.coursebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.coursebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.coursebutton.Location = new System.Drawing.Point(291, 218);
+            this.coursebutton.Location = new System.Drawing.Point(370, 205);
             this.coursebutton.Name = "coursebutton";
             this.coursebutton.Size = new System.Drawing.Size(110, 110);
             this.coursebutton.TabIndex = 11;
@@ -263,12 +265,50 @@
             this.coursebutton.MouseEnter += new System.EventHandler(this.coursebutton_MouseEnter);
             this.coursebutton.MouseLeave += new System.EventHandler(this.coursebutton_MouseLeave);
             // 
+            // stuInfomationbutton
+            // 
+            this.stuInfomationbutton.BackColor = System.Drawing.Color.Transparent;
+            this.stuInfomationbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.stuInfomationbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.stuInfomationbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.stuInfomationbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stuInfomationbutton.Location = new System.Drawing.Point(152, 205);
+            this.stuInfomationbutton.Margin = new System.Windows.Forms.Padding(0);
+            this.stuInfomationbutton.Name = "stuInfomationbutton";
+            this.stuInfomationbutton.Size = new System.Drawing.Size(110, 110);
+            this.stuInfomationbutton.TabIndex = 12;
+            this.stuInfomationbutton.Text = "button1";
+            this.stuInfomationbutton.UseVisualStyleBackColor = false;
+            this.stuInfomationbutton.Click += new System.EventHandler(this.stuInfomationbutton_Click);
+            this.stuInfomationbutton.MouseEnter += new System.EventHandler(this.stuInfomationbutton_MouseEnter);
+            this.stuInfomationbutton.MouseLeave += new System.EventHandler(this.stuInfomationbutton_MouseLeave);
+            // 
+            // stuGradebutton
+            // 
+            this.stuGradebutton.BackColor = System.Drawing.Color.Transparent;
+            this.stuGradebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.stuGradebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.stuGradebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.stuGradebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stuGradebutton.Location = new System.Drawing.Point(307, 205);
+            this.stuGradebutton.Margin = new System.Windows.Forms.Padding(0);
+            this.stuGradebutton.Name = "stuGradebutton";
+            this.stuGradebutton.Size = new System.Drawing.Size(110, 110);
+            this.stuGradebutton.TabIndex = 13;
+            this.stuGradebutton.Text = "button2";
+            this.stuGradebutton.UseVisualStyleBackColor = false;
+            this.stuGradebutton.Click += new System.EventHandler(this.stuGradebutton_Click);
+            this.stuGradebutton.MouseEnter += new System.EventHandler(this.stuGradebutton_MouseEnter);
+            this.stuGradebutton.MouseLeave += new System.EventHandler(this.stuGradebutton_MouseLeave);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(844, 519);
+            this.ClientSize = new System.Drawing.Size(563, 519);
+            this.Controls.Add(this.stuGradebutton);
+            this.Controls.Add(this.stuInfomationbutton);
             this.Controls.Add(this.coursebutton);
             this.Controls.Add(this.gradebutton);
             this.Controls.Add(this.mainbutton);
@@ -311,6 +351,8 @@
         private System.Windows.Forms.Button mainbutton;
         private System.Windows.Forms.Button gradebutton;
         private System.Windows.Forms.Button coursebutton;
+        private System.Windows.Forms.Button stuInfomationbutton;
+        private System.Windows.Forms.Button stuGradebutton;
     }
 }
 

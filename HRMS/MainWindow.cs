@@ -12,13 +12,33 @@ namespace HRMS
     public partial class MainWindow : Form
     {
         User user = new User("-1","","");
+        public void initimage()
+        {
+            quitbutton.BackgroundImage = Image.FromFile("exit.png");
+            changepswbutton.BackgroundImage = Image.FromFile("changepsw.png");
+            relogbutton.BackgroundImage = Image.FromFile("relog.png");
+            mainbutton.BackgroundImage = Image.FromFile("main.png");
+            gradebutton.BackgroundImage = Image.FromFile("grade.png");
+            coursebutton.BackgroundImage = Image.FromFile("course.png");
+            stuInfomationbutton.BackgroundImage = Image.FromFile("stuInfomation.png");
+            stuGradebutton.BackgroundImage = Image.FromFile("stuGrade.png");
+        }
         public void studentinit()//学生界面初始化
         {
-            资料查询ToolStripMenuItem.Enabled = false;
+            mainbutton.Visible = false;
+            gradebutton.Visible = false;
+            coursebutton.Visible = false;
+            stuInfomationbutton.Visible = true;
+            stuGradebutton.Visible = true;
+            
         }
         public void teacherinit()//教师界面初始化
         {
-            资料查询ToolStripMenuItem.Enabled = true;
+            mainbutton.Visible = true;
+            gradebutton.Visible = true;
+            coursebutton.Visible = true;
+            stuInfomationbutton.Visible = false;
+            stuGradebutton.Visible = false;
         }
         public MainWindow()
         {
@@ -27,12 +47,15 @@ namespace HRMS
             if (user.getid() .Equals("-1"))
                 this.Close();
             InitializeComponent();
-            quitbutton.BackgroundImage = Image.FromFile("exit.png");
-            changepswbutton.BackgroundImage = Image.FromFile("changepsw.png");
-            relogbutton.BackgroundImage = Image.FromFile("relog.png");
-            mainbutton.BackgroundImage = Image.FromFile("main.png");
-            gradebutton.BackgroundImage = Image.FromFile("grade.png");
-            coursebutton.BackgroundImage = Image.FromFile("course.png");
+            initimage();
+            if (user.getposition()=="Teacher")
+            {
+                teacherinit();
+            }
+            if (user.getposition() == "Student")
+            {
+                studentinit();
+            }
             toolStripStatusLabel1.Text = "当前用户:" + user.getname();
         }
        private void 资料查询ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -108,6 +131,8 @@ namespace HRMS
             toolStripStatusLabel1.Text = "当前用户:" + user.getname();
             if (user.getposition() == "Student")
                 studentinit();
+            if (user.getposition() == "Teacher")
+                teacherinit();
             this.Show();
         }
 
@@ -168,6 +193,36 @@ namespace HRMS
         private void coursebutton_MouseLeave(object sender, EventArgs e)
         {
             coursebutton.BackgroundImage = Image.FromFile("course.png");
+        }
+
+        private void stuInfomationbutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stuInfomationbutton_MouseEnter(object sender, EventArgs e)
+        {
+            stuInfomationbutton.BackgroundImage = Image.FromFile("stuInfomation2.png");
+        }
+
+        private void stuInfomationbutton_MouseLeave(object sender, EventArgs e)
+        {
+            stuInfomationbutton.BackgroundImage = Image.FromFile("stuInfomation.png");
+        }
+
+        private void stuGradebutton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void stuGradebutton_MouseEnter(object sender, EventArgs e)
+        {
+            stuGradebutton.BackgroundImage = Image.FromFile("stuGrade2.png");
+        }
+
+        private void stuGradebutton_MouseLeave(object sender, EventArgs e)
+        {
+            stuGradebutton.BackgroundImage = Image.FromFile("stuGrade.png");
         }
     }
 }
