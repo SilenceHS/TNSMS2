@@ -15,7 +15,7 @@ namespace HRMS
         {
             InitializeComponent();
             DBAccess dbAccess = new DBAccess();
-            dataGridView1.DataSource = dbAccess.GetDataset("select 学号,姓名,成绩,班级 from dbo.tb_Grade where 学号='"+user.getid()+"'", "dbo.tb_Grade").Tables[0];
+            dataGridView1.DataSource = dbAccess.GetDataset("select 学号,姓名,学科,成绩 from dbo.tb_Grade where 学号='"+user.getid()+"'", "dbo.tb_Grade").Tables[0];
         }
         private void InitializeComponent()
         {
@@ -66,6 +66,7 @@ namespace HRMS
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "StuGrade";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

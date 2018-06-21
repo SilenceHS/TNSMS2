@@ -22,6 +22,7 @@ namespace HRMS
             coursebutton.BackgroundImage = Image.FromFile("course.png");
             stuInfomationbutton.BackgroundImage = Image.FromFile("stuInfomation.png");
             stuGradebutton.BackgroundImage = Image.FromFile("stuGrade.png");
+            mybutton.BackgroundImage = Image.FromFile("doge.png");
         }
         public void studentinit()//学生界面初始化
         {
@@ -225,6 +226,22 @@ namespace HRMS
         private void stuGradebutton_MouseLeave(object sender, EventArgs e)
         {
             stuGradebutton.BackgroundImage = Image.FromFile("stuGrade.png");
+        }
+
+        private void mybutton_MouseEnter(object sender, EventArgs e)
+        {
+            mybutton.BackgroundImage = Image.FromFile("doge2.png");
+        }
+
+        private void mybutton_MouseLeave(object sender, EventArgs e)
+        {
+            mybutton.BackgroundImage = Image.FromFile("doge.png");
+        }
+
+        private void mybutton_Click(object sender, EventArgs e)
+        {
+            myinfo mi = new myinfo();
+            mi.ShowDialog();
         }
     }
 }

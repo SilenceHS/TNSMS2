@@ -29,20 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.资料管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.系统管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.重新登录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.用户管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.修改密码ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.帮助ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.资料查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.人事管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.userStatusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.文件ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.退出ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitbutton = new System.Windows.Forms.Button();
             this.changepswbutton = new System.Windows.Forms.Button();
             this.relogbutton = new System.Windows.Forms.Button();
@@ -51,75 +39,9 @@
             this.coursebutton = new System.Windows.Forms.Button();
             this.stuInfomationbutton = new System.Windows.Forms.Button();
             this.stuGradebutton = new System.Windows.Forms.Button();
+            this.mybutton = new System.Windows.Forms.Button();
             this.userStatusStrip.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // 资料管理ToolStripMenuItem
-            // 
-            this.资料管理ToolStripMenuItem.Name = "资料管理ToolStripMenuItem";
-            this.资料管理ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.资料管理ToolStripMenuItem.Text = "成绩查询";
-            // 
-            // 系统管理ToolStripMenuItem
-            // 
-            this.系统管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.重新登录ToolStripMenuItem,
-            this.用户管理ToolStripMenuItem,
-            this.修改密码ToolStripMenuItem});
-            this.系统管理ToolStripMenuItem.Name = "系统管理ToolStripMenuItem";
-            this.系统管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.系统管理ToolStripMenuItem.Text = "系统管理";
-            // 
-            // 重新登录ToolStripMenuItem
-            // 
-            this.重新登录ToolStripMenuItem.Name = "重新登录ToolStripMenuItem";
-            this.重新登录ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.重新登录ToolStripMenuItem.Text = "重新登录";
-            this.重新登录ToolStripMenuItem.Click += new System.EventHandler(this.重新登录ToolStripMenuItem_Click);
-            // 
-            // 用户管理ToolStripMenuItem
-            // 
-            this.用户管理ToolStripMenuItem.Name = "用户管理ToolStripMenuItem";
-            this.用户管理ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.用户管理ToolStripMenuItem.Text = "用户管理";
-            // 
-            // 修改密码ToolStripMenuItem
-            // 
-            this.修改密码ToolStripMenuItem.Name = "修改密码ToolStripMenuItem";
-            this.修改密码ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.修改密码ToolStripMenuItem.Text = "修改密码";
-            this.修改密码ToolStripMenuItem.Click += new System.EventHandler(this.修改密码ToolStripMenuItem_Click);
-            // 
-            // 帮助ToolStripMenuItem
-            // 
-            this.帮助ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.信息ToolStripMenuItem});
-            this.帮助ToolStripMenuItem.Name = "帮助ToolStripMenuItem";
-            this.帮助ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.帮助ToolStripMenuItem.Text = "帮助";
-            // 
-            // 信息ToolStripMenuItem
-            // 
-            this.信息ToolStripMenuItem.Name = "信息ToolStripMenuItem";
-            this.信息ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.信息ToolStripMenuItem.Text = "信息";
-            // 
-            // 资料查询ToolStripMenuItem
-            // 
-            this.资料查询ToolStripMenuItem.Name = "资料查询ToolStripMenuItem";
-            this.资料查询ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
-            this.资料查询ToolStripMenuItem.Text = "学生信息查询";
-            this.资料查询ToolStripMenuItem.Click += new System.EventHandler(this.资料查询ToolStripMenuItem_Click);
-            // 
-            // 人事管理ToolStripMenuItem
-            // 
-            this.人事管理ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.资料查询ToolStripMenuItem,
-            this.资料管理ToolStripMenuItem});
-            this.人事管理ToolStripMenuItem.Name = "人事管理ToolStripMenuItem";
-            this.人事管理ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.人事管理ToolStripMenuItem.Text = "学生管理";
             // 
             // userStatusStrip
             // 
@@ -137,34 +59,6 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(131, 17);
             this.toolStripStatusLabel1.Text = "toolStripStatusLabel1";
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.文件ToolStripMenuItem,
-            this.人事管理ToolStripMenuItem,
-            this.系统管理ToolStripMenuItem,
-            this.帮助ToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(563, 25);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // 文件ToolStripMenuItem
-            // 
-            this.文件ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.退出ToolStripMenuItem});
-            this.文件ToolStripMenuItem.Name = "文件ToolStripMenuItem";
-            this.文件ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.文件ToolStripMenuItem.Text = "文件";
-            // 
-            // 退出ToolStripMenuItem
-            // 
-            this.退出ToolStripMenuItem.Name = "退出ToolStripMenuItem";
-            this.退出ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.退出ToolStripMenuItem.Text = "退出";
-            this.退出ToolStripMenuItem.Click += new System.EventHandler(this.退出ToolStripMenuItem_Click);
-            // 
             // quitbutton
             // 
             this.quitbutton.BackColor = System.Drawing.Color.Transparent;
@@ -172,7 +66,7 @@
             this.quitbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.quitbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.quitbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.quitbutton.Location = new System.Drawing.Point(370, 356);
+            this.quitbutton.Location = new System.Drawing.Point(368, 325);
             this.quitbutton.Margin = new System.Windows.Forms.Padding(0);
             this.quitbutton.Name = "quitbutton";
             this.quitbutton.Size = new System.Drawing.Size(110, 110);
@@ -189,7 +83,7 @@
             this.changepswbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.changepswbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.changepswbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.changepswbutton.Location = new System.Drawing.Point(88, 356);
+            this.changepswbutton.Location = new System.Drawing.Point(86, 325);
             this.changepswbutton.Margin = new System.Windows.Forms.Padding(0);
             this.changepswbutton.Name = "changepswbutton";
             this.changepswbutton.Size = new System.Drawing.Size(110, 110);
@@ -206,7 +100,7 @@
             this.relogbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.relogbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.relogbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.relogbutton.Location = new System.Drawing.Point(229, 356);
+            this.relogbutton.Location = new System.Drawing.Point(227, 325);
             this.relogbutton.Name = "relogbutton";
             this.relogbutton.Size = new System.Drawing.Size(110, 110);
             this.relogbutton.TabIndex = 8;
@@ -222,7 +116,7 @@
             this.mainbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.mainbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.mainbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mainbutton.Location = new System.Drawing.Point(88, 205);
+            this.mainbutton.Location = new System.Drawing.Point(86, 174);
             this.mainbutton.Margin = new System.Windows.Forms.Padding(0);
             this.mainbutton.Name = "mainbutton";
             this.mainbutton.Size = new System.Drawing.Size(110, 110);
@@ -239,7 +133,7 @@
             this.gradebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.gradebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.gradebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gradebutton.Location = new System.Drawing.Point(229, 205);
+            this.gradebutton.Location = new System.Drawing.Point(227, 174);
             this.gradebutton.Margin = new System.Windows.Forms.Padding(0);
             this.gradebutton.Name = "gradebutton";
             this.gradebutton.Size = new System.Drawing.Size(110, 110);
@@ -256,7 +150,7 @@
             this.coursebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.coursebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.coursebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.coursebutton.Location = new System.Drawing.Point(370, 205);
+            this.coursebutton.Location = new System.Drawing.Point(368, 174);
             this.coursebutton.Name = "coursebutton";
             this.coursebutton.Size = new System.Drawing.Size(110, 110);
             this.coursebutton.TabIndex = 11;
@@ -272,7 +166,7 @@
             this.stuInfomationbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.stuInfomationbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.stuInfomationbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stuInfomationbutton.Location = new System.Drawing.Point(152, 205);
+            this.stuInfomationbutton.Location = new System.Drawing.Point(150, 174);
             this.stuInfomationbutton.Margin = new System.Windows.Forms.Padding(0);
             this.stuInfomationbutton.Name = "stuInfomationbutton";
             this.stuInfomationbutton.Size = new System.Drawing.Size(110, 110);
@@ -289,7 +183,7 @@
             this.stuGradebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.stuGradebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.stuGradebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.stuGradebutton.Location = new System.Drawing.Point(307, 205);
+            this.stuGradebutton.Location = new System.Drawing.Point(305, 174);
             this.stuGradebutton.Margin = new System.Windows.Forms.Padding(0);
             this.stuGradebutton.Name = "stuGradebutton";
             this.stuGradebutton.Size = new System.Drawing.Size(110, 110);
@@ -299,12 +193,31 @@
             this.stuGradebutton.MouseEnter += new System.EventHandler(this.stuGradebutton_MouseEnter);
             this.stuGradebutton.MouseLeave += new System.EventHandler(this.stuGradebutton_MouseLeave);
             // 
+            // mybutton
+            // 
+            this.mybutton.BackColor = System.Drawing.Color.Transparent;
+            this.mybutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.mybutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.mybutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.mybutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mybutton.Location = new System.Drawing.Point(515, 451);
+            this.mybutton.Margin = new System.Windows.Forms.Padding(0);
+            this.mybutton.Name = "mybutton";
+            this.mybutton.Size = new System.Drawing.Size(40, 40);
+            this.mybutton.TabIndex = 14;
+            this.mybutton.UseVisualStyleBackColor = false;
+            this.mybutton.Click += new System.EventHandler(this.mybutton_Click);
+            this.mybutton.MouseEnter += new System.EventHandler(this.mybutton_MouseEnter);
+            this.mybutton.MouseLeave += new System.EventHandler(this.mybutton_MouseLeave);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(563, 519);
+            this.Controls.Add(this.mybutton);
             this.Controls.Add(this.stuGradebutton);
             this.Controls.Add(this.stuInfomationbutton);
             this.Controls.Add(this.coursebutton);
@@ -314,7 +227,6 @@
             this.Controls.Add(this.changepswbutton);
             this.Controls.Add(this.quitbutton);
             this.Controls.Add(this.userStatusStrip);
-            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "MainWindow";
@@ -322,28 +234,14 @@
             this.Text = "Form1";
             this.userStatusStrip.ResumeLayout(false);
             this.userStatusStrip.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.ToolStripMenuItem 资料管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 系统管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 重新登录ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 用户管理ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 帮助ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 资料查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 人事管理ToolStripMenuItem;
         private System.Windows.Forms.StatusStrip userStatusStrip;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 文件ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 修改密码ToolStripMenuItem;
         private System.Windows.Forms.Button quitbutton;
         private System.Windows.Forms.Button changepswbutton;
         private System.Windows.Forms.Button relogbutton;
@@ -352,6 +250,7 @@
         private System.Windows.Forms.Button coursebutton;
         private System.Windows.Forms.Button stuInfomationbutton;
         private System.Windows.Forms.Button stuGradebutton;
+        private System.Windows.Forms.Button mybutton;
     }
 }
 
