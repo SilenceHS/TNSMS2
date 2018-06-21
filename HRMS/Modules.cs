@@ -56,7 +56,7 @@ namespace HRMS
             }
             dbAccess.OpenConnection();
             StringBuilder strSql = new StringBuilder();
-            strSql.Append("update tb_Student Set 照片=@Photo where 学号=" + MID);
+            strSql.Append("update tb_Student Set 照片=@Photo where 学号='" + MID+"'");
             SqlCommand strCmd = new SqlCommand(strSql.ToString(),  DBAccess.sqlConnection);
             strCmd.Parameters.Add("@Photo", SqlDbType.Binary).Value = p;
             strCmd.ExecuteNonQuery();

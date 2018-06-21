@@ -19,7 +19,7 @@ namespace HRMS
         //定义一个SqlConnection类型的公共变量My_con，用于判断数据库是否连接成功
         public static SqlConnection sqlConnection;
         //public static string strSQLConnection = "Data Source=B313-14\\SQLEXPRESS;Database=HRMS;User id=bao;PWD=123";
-        public static string strSQLConnection = "server=DESKTOP-V752EIN;database=" + "TNSMS" + ";uid=16211160112;pwd=16211160112";
+        public static string strSQLConnection = "server=DESKTOP-V752EIN;database=" + "TNSMS" + ";uid='16211160112';pwd='16211160112'";
 
         public static int nLoginType = 0;            //用户登录与重新登录的标识
         public static string strSQLSelectAll = "Select * from tb_StuffBasic"; //存储职工基本信息表中的SQL语句

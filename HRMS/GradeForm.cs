@@ -32,16 +32,16 @@ namespace HRMS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GradeForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Gradesearchbutton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GradedataGridView = new System.Windows.Forms.DataGridView();
-            this.Gradeaddbutton = new System.Windows.Forms.Button();
-            this.Gradedeletebutton = new System.Windows.Forms.Button();
             this.Gradechangebutton = new System.Windows.Forms.Button();
+            this.Gradedeletebutton = new System.Windows.Forms.Button();
+            this.Gradeaddbutton = new System.Windows.Forms.Button();
+            this.Gradesearchbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GradedataGridView)).BeginInit();
@@ -61,22 +61,6 @@ namespace HRMS
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "分类查询";
             // 
-            // Gradesearchbutton
-            // 
-            this.Gradesearchbutton.BackColor = System.Drawing.Color.Transparent;
-            this.Gradesearchbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Gradesearchbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Gradesearchbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.Gradesearchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Gradesearchbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradesearchbutton.Image")));
-            this.Gradesearchbutton.Location = new System.Drawing.Point(408, 9);
-            this.Gradesearchbutton.Margin = new System.Windows.Forms.Padding(0);
-            this.Gradesearchbutton.Name = "Gradesearchbutton";
-            this.Gradesearchbutton.Size = new System.Drawing.Size(51, 51);
-            this.Gradesearchbutton.TabIndex = 4;
-            this.Gradesearchbutton.UseVisualStyleBackColor = false;
-            this.Gradesearchbutton.Click += new System.EventHandler(this.Gradesearchbutton_Click);
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(269, 22);
@@ -95,6 +79,7 @@ namespace HRMS
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "ALL",
@@ -140,21 +125,22 @@ namespace HRMS
             this.GradedataGridView.TabIndex = 0;
             this.GradedataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GradedataGridView_CellContentClick);
             // 
-            // Gradeaddbutton
+            // Gradechangebutton
             // 
-            this.Gradeaddbutton.BackColor = System.Drawing.Color.Transparent;
-            this.Gradeaddbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Gradeaddbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Gradeaddbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.Gradeaddbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Gradeaddbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradeaddbutton.Image")));
-            this.Gradeaddbutton.Location = new System.Drawing.Point(564, 87);
-            this.Gradeaddbutton.Margin = new System.Windows.Forms.Padding(0);
-            this.Gradeaddbutton.Name = "Gradeaddbutton";
-            this.Gradeaddbutton.Size = new System.Drawing.Size(70, 70);
-            this.Gradeaddbutton.TabIndex = 2;
-            this.Gradeaddbutton.UseVisualStyleBackColor = false;
-            this.Gradeaddbutton.Click += new System.EventHandler(this.Gradeaddbutton_Click);
+            this.Gradechangebutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradechangebutton.Enabled = false;
+            this.Gradechangebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradechangebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradechangebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradechangebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradechangebutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradechangebutton.Image")));
+            this.Gradechangebutton.Location = new System.Drawing.Point(564, 267);
+            this.Gradechangebutton.Margin = new System.Windows.Forms.Padding(0);
+            this.Gradechangebutton.Name = "Gradechangebutton";
+            this.Gradechangebutton.Size = new System.Drawing.Size(70, 70);
+            this.Gradechangebutton.TabIndex = 4;
+            this.Gradechangebutton.UseVisualStyleBackColor = false;
+            this.Gradechangebutton.Click += new System.EventHandler(this.Gradechangebutton_Click);
             // 
             // Gradedeletebutton
             // 
@@ -173,22 +159,37 @@ namespace HRMS
             this.Gradedeletebutton.UseVisualStyleBackColor = false;
             this.Gradedeletebutton.Click += new System.EventHandler(this.Gradedeletebutton_Click);
             // 
-            // Gradechangebutton
+            // Gradeaddbutton
             // 
-            this.Gradechangebutton.BackColor = System.Drawing.Color.Transparent;
-            this.Gradechangebutton.Enabled = false;
-            this.Gradechangebutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Gradechangebutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.Gradechangebutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.Gradechangebutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Gradechangebutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradechangebutton.Image")));
-            this.Gradechangebutton.Location = new System.Drawing.Point(564, 267);
-            this.Gradechangebutton.Margin = new System.Windows.Forms.Padding(0);
-            this.Gradechangebutton.Name = "Gradechangebutton";
-            this.Gradechangebutton.Size = new System.Drawing.Size(70, 70);
-            this.Gradechangebutton.TabIndex = 4;
-            this.Gradechangebutton.UseVisualStyleBackColor = false;
-            this.Gradechangebutton.Click += new System.EventHandler(this.Gradechangebutton_Click);
+            this.Gradeaddbutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradeaddbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradeaddbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradeaddbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradeaddbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradeaddbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradeaddbutton.Image")));
+            this.Gradeaddbutton.Location = new System.Drawing.Point(564, 87);
+            this.Gradeaddbutton.Margin = new System.Windows.Forms.Padding(0);
+            this.Gradeaddbutton.Name = "Gradeaddbutton";
+            this.Gradeaddbutton.Size = new System.Drawing.Size(70, 70);
+            this.Gradeaddbutton.TabIndex = 2;
+            this.Gradeaddbutton.UseVisualStyleBackColor = false;
+            this.Gradeaddbutton.Click += new System.EventHandler(this.Gradeaddbutton_Click);
+            // 
+            // Gradesearchbutton
+            // 
+            this.Gradesearchbutton.BackColor = System.Drawing.Color.Transparent;
+            this.Gradesearchbutton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Gradesearchbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.Gradesearchbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.Gradesearchbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Gradesearchbutton.Image = ((System.Drawing.Image)(resources.GetObject("Gradesearchbutton.Image")));
+            this.Gradesearchbutton.Location = new System.Drawing.Point(408, 9);
+            this.Gradesearchbutton.Margin = new System.Windows.Forms.Padding(0);
+            this.Gradesearchbutton.Name = "Gradesearchbutton";
+            this.Gradesearchbutton.Size = new System.Drawing.Size(51, 51);
+            this.Gradesearchbutton.TabIndex = 4;
+            this.Gradesearchbutton.UseVisualStyleBackColor = false;
+            this.Gradesearchbutton.Click += new System.EventHandler(this.Gradesearchbutton_Click);
             // 
             // GradeForm
             // 

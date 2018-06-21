@@ -277,7 +277,6 @@
             this.stuInfomationbutton.Name = "stuInfomationbutton";
             this.stuInfomationbutton.Size = new System.Drawing.Size(110, 110);
             this.stuInfomationbutton.TabIndex = 12;
-            this.stuInfomationbutton.Text = "button1";
             this.stuInfomationbutton.UseVisualStyleBackColor = false;
             this.stuInfomationbutton.Click += new System.EventHandler(this.stuInfomationbutton_Click);
             this.stuInfomationbutton.MouseEnter += new System.EventHandler(this.stuInfomationbutton_MouseEnter);
@@ -295,7 +294,6 @@
             this.stuGradebutton.Name = "stuGradebutton";
             this.stuGradebutton.Size = new System.Drawing.Size(110, 110);
             this.stuGradebutton.TabIndex = 13;
-            this.stuGradebutton.Text = "button2";
             this.stuGradebutton.UseVisualStyleBackColor = false;
             this.stuGradebutton.Click += new System.EventHandler(this.stuGradebutton_Click);
             this.stuGradebutton.MouseEnter += new System.EventHandler(this.stuGradebutton_MouseEnter);
@@ -318,6 +316,7 @@
             this.Controls.Add(this.userStatusStrip);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

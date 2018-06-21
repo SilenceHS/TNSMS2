@@ -30,7 +30,7 @@ namespace HRMS
         private Label label9;
         private Label label10;
         private Label label11;
-        private Label label12;
+        public Label label12;
         private Button nbutton;
 
         public AddStudent()
@@ -217,6 +217,7 @@ namespace HRMS
             // 
             // SexcomboBox
             // 
+            this.SexcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.SexcomboBox.FormattingEnabled = true;
             this.SexcomboBox.Items.AddRange(new object[] {
             "男",

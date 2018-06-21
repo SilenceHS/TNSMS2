@@ -56,7 +56,7 @@ namespace HRMS
             {
                 studentinit();
             }
-            toolStripStatusLabel1.Text = "当前用户:" + user.getname();
+            toolStripStatusLabel1.Text = "当前用户：" + user.getname() + "  身份为：" + user.getposition();
         }
        private void 资料查询ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -77,7 +77,7 @@ namespace HRMS
             LD.ShowDialog();
             if (user.getid().Equals("-1"))
                 this.Close();
-            toolStripStatusLabel1.Text = "当前用户:" + user.getname();
+            toolStripStatusLabel1.Text = "当前用户：" + user.getname()+"  身份为："+user.getposition();
             if(user.getposition()=="Student")
                 studentinit();
             this.Show();
@@ -197,7 +197,8 @@ namespace HRMS
 
         private void stuInfomationbutton_Click(object sender, EventArgs e)
         {
-
+            stuInfo si = new stuInfo(user);
+            si.ShowDialog();
         }
 
         private void stuInfomationbutton_MouseEnter(object sender, EventArgs e)
@@ -212,7 +213,8 @@ namespace HRMS
 
         private void stuGradebutton_Click(object sender, EventArgs e)
         {
-            
+            StuGrade sg = new StuGrade(user);
+            sg.ShowDialog();
         }
 
         private void stuGradebutton_MouseEnter(object sender, EventArgs e)

@@ -21,7 +21,6 @@ namespace HRMS
             loginButton.BackgroundImage = Image.FromFile("log.png");
             //this.ControlBox = false;//取消右上角关闭按钮显示
         }
-
         private void loginButton_Click(object sender, EventArgs e)
         {
             try

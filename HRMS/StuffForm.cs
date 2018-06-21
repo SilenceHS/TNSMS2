@@ -88,7 +88,15 @@ namespace HRMS
                     remarkTextBox.Text = DGrid[7, DGrid.CurrentCell.RowIndex].Value.ToString();
                     //nID = Convert.ToInt32(idTextBox.Text); //获取当前职位编号
                     picSelectButton.Enabled = true;
-                    picDeleteButton.Enabled = true;
+                    try
+                    {
+                        if ((byte[])dataGridView1[8, dataGridView1.CurrentCell.RowIndex].Value != null)
+                            picDeleteButton.Enabled = true;
+                    }
+                    catch
+                    {
+                        picDeleteButton.Enabled = false;
+                    }
                     setadcbuttontrue();
                     return DGrid[1, DGrid.CurrentCell.RowIndex].Value.ToString();//返回当前职工的姓名
                 }
@@ -183,8 +191,6 @@ namespace HRMS
                 MessageBox.Show("ID输入不正确！");
                 return;
             }
-            
-            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -192,7 +198,15 @@ namespace HRMS
             Grid_Info(dataGridView1);//当点击了Grid里面的条目，使用该函数更新下方信息显示
             PreGridSelect = dataGridView1.CurrentCell.RowIndex;
             picSelectButton.Enabled = true;
-            picDeleteButton.Enabled = true;
+            try
+            {
+                if ((byte[])dataGridView1[8, dataGridView1.CurrentCell.RowIndex].Value != null)
+                    picDeleteButton.Enabled = true;
+            }
+            catch
+            {
+                picDeleteButton.Enabled = false;
+            }
             setadcbuttontrue();
         }
         
